@@ -1,0 +1,488 @@
+# Relative paths work OK as long as you start the tool from its local dir
+template_path: tool
+
+# This folder gets copied into the output directory
+template_static_path: assets
+
+# Templates should have filenames starting in template-
+default_template: template-doc.html
+default_pdf_template: template-forpdf.html
+
+# HTML, PDF, GFM all get output here
+out_path: out
+
+# MD files should be here (and in subdirs)
+content_path: content
+
+# This folder gets copied into the output directory
+content_static_path: img
+
+# PDF creation needs a dir for temporary files
+temporary_files_path: /tmp/
+
+default_filters:
+    - multicode_tabs
+    - standardize_header_ids
+    - buttonize
+    - callouts
+    - badges
+    - link_replacement
+
+callout_class: "devportal-callout"
+
+cover_page:
+    name: Overview
+    html: index.html
+    sidebar: "off"
+    template: template-index.html
+
+targets:
+    # First member is the default that gets built when target not specified
+    -   name: local
+        display_name: CasinoCoin Developer Portal
+
+    -   name: casinocoin.org
+        display_name: CasinoCoin Developer Center
+        template: template-contentwithtoc.html
+        link_subs:
+            "reference-casinocoind.html": https://casinocoin.org/build/casinocoind-apis/
+            "reference-casinocoinapi.html": https://casinocoin.org/build/casinocoinapi/
+            "reference-transaction-format.html": https://casinocoin.org/build/transactions/
+            "reference-ledger-format.html": https://casinocoin.org/build/ledger-format/
+            "reference-data-api.html": https://casinocoin.org/build/data-api-v2/
+            "reference-amendments.html": https://casinocoin.org/build/known-amendments/
+            "tutorial-multisign.html": https://casinocoin.org/build/how-to-multi-sign/
+            "concept-issuing-and-operational-addresses.html": https://casinocoin.org/build/issuing-operational-addresses/
+            "tutorial-reliable-transaction-submission.html": https://casinocoin.org/build/reliable-transaction-submission/
+            "tutorial-casinocoinapi-beginners-guide.html": https://casinocoin.org/build/casinocoinapi-beginners-guide/
+            "tutorial-csc-install-casinocoind.html": https://casinocoin.org/build/tutorial-csc-install-casinocoind/
+            # "tutorial-casinocoind-setup.html": https://casinocoin.org/build/casinocoind-setup/
+            "tutorial-gateway-guide.html": https://casinocoin.org/build/gateway-guide/
+            "tutorial-paychan.html": https://casinocoin.org/build/payment-channels-tutorial/
+            "tutorial-escrow.html": https://casinocoin.org/build/escrow-tutorials/
+            "tutorial-listing-xrp.html": https://casinocoin.org/build/listing-xrp-exchange/
+            "tutorial-tutorial-csc-implementation-cheat-sheet.html": https://casinocoin.org/build/csc-implementation-cheat-sheet/
+            "concept-accounts.html": https://casinocoin.org/build/accounts/
+            "concept-amendments.html": https://casinocoin.org/build/amendments/
+            "concept-consensus.html": https://casinocoin.org/build/xrp-ledger-consensus-process/
+            "concept-escrow.html": https://casinocoin.org/build/escrow/
+            "concept-reaching-consensus.html": https://casinocoin.org/build/reaching-consensus-xrp-ledger/
+            "concept-fee-voting.html": https://casinocoin.org/build/fee-voting/
+            "concept-fees.html": https://casinocoin.org/build/fees-disambiguation/
+            "concept-freeze.html": https://casinocoin.org/build/freeze/
+            "concept-paths.html": https://casinocoin.org/build/paths/
+            "concept-partial-payments.html": https://casinocoin.org/build/partial-payments/
+            "concept-reserves.html": https://casinocoin.org/build/reserves/
+            "concept-stand-alone-mode.html": https://casinocoin.org/build/stand-alone-mode/
+            "concept-transaction-cost.html": https://casinocoin.org/build/transaction-cost/
+            "concept-transfer-fees.html": https://casinocoin.org/build/transfer-fees/
+            "concept-nocasinocoin.html": https://casinocoin.org/build/understanding-the-nocasinocoin-flag/
+            "gb-2015-06.html": https://casinocoin.org/build/gateway-guide/gb-2015-06-corrections-autobridging/
+            "gb-2015-05.html": https://casinocoin.org/build/gateway-guide/gb-2015-05-historical-ledger-query-migration/
+            "casinocoin-api-tool.html": https://casinocoin.org/build/websocket-tool/
+            "data-api-v2-tool.html": https://casinocoin.org/build/data-api-tool/
+            "concept-money.html": https://casinocoin.org/build/money-xrp-ledger/
+            "reference-currency.html": https://casinocoin.org/build/currency-format/
+            "concept-demurrage.html": https://casinocoin.org/build/demurrage/
+        image_subs:
+            "img/funds_flow_diagram.png": https://cdn.casinocoin.org/wp-content/uploads/2016/03/funds_flow_diagram.png
+            "img/e2g-01.png": https://casinocoin.org/wp-content/themes/ripple-beta/assets/img/e2g-01.png
+            "img/e2g-02.png": https://casinocoin.org/wp-content/themes/ripple-beta/assets/img/e2g-02.png
+            "img/e2g-03.png": https://casinocoin.org/wp-content/themes/ripple-beta/assets/img/e2g-03.png
+            "img/e2g-with_transferrate.png": https://casinocoin.org/wp-content/themes/ripple-beta/assets/img/e2g-with_transferrate.png
+            "img/transfer_fees_example.png": https://cdn.casinocoin.org/wp-content/uploads/2015/06/transfer_fees_example1.png
+            "img/ledger-process.png": https://casinocoin.org/wp-content/themes/ripple-beta/assets/img/ledger-process.png
+            "img/ledger-components.png": https://casinocoin.org/wp-content/themes/ripple-beta/assets/img/ledger-components.png
+            "img/ledger-indexes.png": https://casinocoin.org/wp-content/themes/ripple-beta/assets/img/ledger-indexes.png
+            "img/ledger-history.png": https://cdn.casinocoin.org/wp-content/uploads/2014/12/Overview-of-Ripple-Ledger-Consensus-and-Validation-12_12-02.png
+            "img/ledger-changes.png": https://cdn.casinocoin.org/wp-content/uploads/2014/12/Overview-of-Ripple-Ledger-Consensus-and-Validation-12_12-03.png
+            "img/paths-examples.png": https://casinocoin.org/wp-content/themes/ripple-beta/assets/img/paths-examples.png
+            "img/paths-default_paths.png": https://casinocoin.org/wp-content/themes/ripple-beta/assets/img/paths-default_paths.png
+            "img/noripple-01.png": https://cdn.casinocoin.org/wp-content/uploads/2015/04/noripple-01.png
+            "img/noripple-02.png": https://cdn.casinocoin.org/wp-content/uploads/2015/04/noripple-02.png
+            "img/noripple-03.png": https://cdn.casinocoin.org/wp-content/uploads/2015/01/noripple-03.png
+            "img/noripple-04.png": https://cdn.casinocoin.org/wp-content/uploads/2015/01/noripple-04.png
+            "img/noripple-05.png": https://cdn.casinocoin.org/wp-content/uploads/2015/01/noripple-05.png
+            "img/noripple-06.png": https://cdn.casinocoin.org/wp-content/uploads/2015/01/noripple-06.png
+            "img/key-address-rels.png": https://cdn.casinocoin.org/wp-content/uploads/2017/05/key-address-rels.png
+            "img/paychan-flow.png": https://cdn.casinocoin.org/wp-content/uploads/2017/05/paychan-flow1.png
+            "img/consensus-agreed-transaction-set.png": https://cdn.casinocoin.org/wp-content/uploads/2014/12/Overview-of-Ripple-Ledger-Consensus-and-Validation-12_12-06.png
+            "img/consensus-calculate-validation.png": https://cdn.casinocoin.org/wp-content/uploads/2014/12/Overview-of-Ripple-Ledger-Consensus-and-Validation-12_12-07.png
+            "img/consensus-candidate-transaction-sets.png": https://cdn.casinocoin.org/wp-content/uploads/2014/12/Overview-of-Ripple-Ledger-Consensus-and-Validation-12_12-05.png
+            "img/consensus-declare-validation.png": https://cdn.casinocoin.org/wp-content/uploads/2014/12/Overview-of-Ripple-Ledger-Consensus-and-Validation-12_12-08.png
+            "img/consensus-validated-ledger.png": https://cdn.casinocoin.org/wp-content/uploads/2014/12/Overview-of-Ripple-Ledger-Consensus-and-Validation-12_12-09.png
+            "img/xrp-ledger-network.png": https://cdn.casinocoin.org/wp-content/uploads/2014/12/Overview-of-Ripple-Ledger-Consensus-and-Validation-12_12-04.png
+            "img/escrow-success-flow.png": https://cdn.casinocoin.org/wp-content/uploads/2017/09/escrow-success-flow.png
+            "img/escrow-cancel-flow.png": https://cdn.casinocoin.org/wp-content/uploads/2017/09/escrow-cancel-flow.png
+            "img/currency-code-format.png": https://cdn.casinocoin.org/wp-content/uploads/2017/11/currency-code-format.png
+            "img/currency-number-format.png": https://cdn.casinocoin.org/wp-content/uploads/2017/11/currency-number-format.png
+            "img/demurrage-currency-code-format.png": https://cdn.casinocoin.org/wp-content/uploads/2017/11/demurrage-currency-code-format.png
+
+    -   name: casinocoind-setup
+        display_name: casinocoind Setup Guide
+        link_subs:
+            "reference-casinocoind.html": https://casinocoin.org/build/casinocoind-apis/
+
+pages:
+# References are exhaustive lists of commands and options
+    -   name: CasinocoinAPI
+        category: References
+        html: reference-casinocoinapi.html
+        # Currently this is the only page that's fetched remotely.
+        md: index.md
+        filters:
+            - remove_doctoc
+            - add_version
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: casinocoind
+        category: References
+        html: reference-casinocoind.html
+        md: reference-casinocoind.md
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: Transaction Format
+        category: References
+        html: reference-transaction-format.html
+        md: reference-transaction-format.md
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: Ledger Format
+        category: References
+        html: reference-ledger-format.html
+        md: reference-ledger-format.md
+        targets:
+            - local
+            - casinocoin.org
+
+    # -   name: CasinoCoin Data API v2
+    #     category: References
+    #     html: reference-data-api.html
+    #     md: reference-data-api.md
+    #     targets:
+    #         - local
+    #         - casinocoin.org
+
+    #-   md: reference-currency.md
+    #    category: References
+    #    html: reference-currency.html
+    #    targets:
+    #        - local
+    #        - casinocoin.org
+
+    -   md: reference-amendments.md
+        category: References
+        html: reference-amendments.html
+        targets:
+            - local
+            - casinocoin.org
+
+# Tutorials are step-by-step guides to a specific goal
+    -   name: How to Multi-Sign
+        category: Tutorials
+        html: tutorial-multisign.html
+        md: tutorial-multisign.md
+        targets:
+            - local
+            - casinocoin.org
+
+    #-   category: Tutorials
+    #    html: tutorial-paychan.html
+    #    md: tutorial-paychan.md
+    #    targets:
+    #        - local
+    #        - casinocoin.org
+
+        # This is more like a "best practices" doc than Tutorials...
+    #-   name: Issuing and Operational Addresses
+    #    category: Tutorials
+    #    html: concept-issuing-and-operational-addresses.html
+    #    md: concept-issuing-and-operational-addresses.md
+    #    targets:
+    #        - local
+    #        - casinocoin.org
+
+    -   name: Reliable Transaction Submission
+        category: Tutorials
+        html: tutorial-reliable-transaction-submission.html
+        md: tutorial-reliable-transaction-submission.md
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: CasinocoinAPI Beginners Guide
+        category: Tutorials
+        html: tutorial-casinocoinapi-beginners-guide.html
+        md: tutorial-casinocoinapi-beginners-guide.md
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: Install and configure casinocoind
+
+        category: Tutorials
+        html: tutorial-csc-install-casinocoind.html
+        md: tutorial-csc-install-casinocoind.md
+        targets:
+            - local
+            - casinocoin.org
+            - casinocoind-setup
+
+    # -   name: casinocoind Setup
+        # category: Tutorials
+        # html: tutorial-casinocoind-setup.html
+        # md: tutorial-casinocoind-setup.md
+        # targets:
+            # - local
+            # - casinocoin.org
+            # - casinocoind-setup
+
+        # The Gateway Guide is also a poor fit for the "tutorials" category
+    #-   name: Gateway Guide
+    #    category: Tutorials
+    #    html: tutorial-gateway-guide.html
+    #    md: tutorial-gateway-guide.md
+    #    targets:
+    #        - local
+    #        - casinocoin.org
+
+# Listing CSC as an Exchange
+    -   category: Tutorials
+        html: tutorial-listing-csc.html
+        md: tutorial-listing-csc.md
+        targets:
+            - local
+            - casinocoin.org
+
+# Most used commands for an exchange
+    - category: Tutorials
+      html: tutorial-csc-implementation-cheat-sheet.html
+      md: tutorial-csc-implementation-cheat-sheet.md
+      targets:
+          - local
+          - casinocoin.org
+
+    # -   md: tutorial-escrow.md
+    #     html: tutorial-escrow.html
+    #     category: Tutorials
+    #     targets:
+    #         - local
+    #         - casinocoin.org
+
+#Features describe how the CSC Ledger works in a mostly conceptual manner
+    -   name: Accounts
+        category: Features
+        html: concept-accounts.html
+        md: concept-accounts.md
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: Amendments
+        category: Features
+        html: concept-amendments.html
+        md: concept-amendments.md
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: Consensus Process
+        category: Features
+        html: concept-consensus.html
+        md: concept-consensus.md
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: Reaching Consensus in the CSC Ledger
+        category: Features
+        html: concept-reaching-consensus.html
+        md: concept-reaching-consensus.md
+        targets:
+            - local
+            - casinocoin.org
+
+    # -   md: concept-escrow.md
+    #     category: Features
+    #     targets:
+    #         - local
+    #         - casinocoin.org
+
+    -   name: Fee Voting
+        category: Features
+        html: concept-fee-voting.html
+        md: concept-fee-voting.md
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: Fees (Disambiguation)
+        category: Features
+        html: concept-fees.html
+        md: concept-fees.md
+        targets:
+            - local
+            - casinocoin.org
+
+    #-   name: Freeze
+    #    category: Features
+    #    html: concept-freeze.html
+    #    md: concept-freeze.md
+    #    targets:
+    #        - local
+    #        - casinocoin.org
+
+    #-   md: concept-money.md
+    #    category: Features
+    #    html: concept-money.html
+    #    targets:
+    #        - local
+    #        - casinocoin.org
+
+    #-   md: concept-demurrage.md
+    #    category: Features
+    #    html: concept-demurrage.html
+    #    targets:
+    #        - local
+    #        - casinocoin.org
+
+    -   md: concept-partial-payments.md
+        category: Features
+        html: concept-partial-payments.html
+        targets:
+            - local
+            - casinocoin.org
+
+    #-   name: Paths
+    #    category: Features
+    #    html: concept-paths.html
+    #    md: concept-paths.md
+    #    targets:
+    #        - local
+    #        - casinocoin.org
+
+    -   name: Reserves
+        category: Features
+        html: concept-reserves.html
+        md: concept-reserves.md
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: Stand-Alone Mode
+        category: Features
+        html: concept-stand-alone-mode.html
+        md: concept-stand-alone-mode.md
+        targets:
+            - local
+            - casinocoin.org
+
+    -   name: Transaction Cost
+        category: Features
+        html: concept-transaction-cost.html
+        md: concept-transaction-cost.md
+        targets:
+            - local
+            - casinocoin.org
+
+    #-   name: Transfer Fees
+    #    category: Features
+    #    html: concept-transfer-fees.html
+    #    md: concept-transfer-fees.md
+    #    targets:
+    #        - local
+    #        - casinocoin.org
+
+    #-   name: Understanding the NoCasinocoin flag
+    #    category: Features
+    #    html: concept-nocasinocoin.html
+    #    md: concept-nocasinocoin.md
+    #    targets:
+    #        - local
+    #        - casinocoin.org
+
+    # -   name: "GB-2015-06: Corrections to Autobridging"
+    #     category: Gateway Bulletins
+    #     html: gb-2015-06.html
+    #     md: gb-2015-06.md
+    #     targets:
+    #         - local
+    #         - casinocoin.org
+
+    # -   name: "GB-2015-05: Historical Ledger Query Migration"
+    #     category: Gateway Bulletins
+    #     html: gb-2015-05.html
+    #     md: gb-2015-05.md
+    #     targets:
+    #         - local
+    #         - casinocoin.org
+
+# API tools are interactive software for interfacing with real APIs
+    -   name: WebSocket API Tool
+        category: API Tools
+        html: casinocoin-api-tool.html
+        sidebar: custom
+        targets:
+            - local
+            - casinocoin.org
+        template: template-casinocoin-api-tool.html
+
+    # -   name: Data API v2 Tool
+    #     category: API Tools
+    #     html: data-api-v2-tool.html
+    #     methods_js: js/apitool-methods-data_v2.js
+    #     rest_host: https://data.casinocoin.org
+    #     doc_page: reference-data-api.html
+    #     sidebar: custom
+    #     targets:
+    #         - local
+    #         - casinocoin.org
+    #     template: template-rest-api-tool.html
+
+    -   name: casinocoind JSON-RPC Tool
+        # This tool requires a local server w/ reverse proxy
+        category: API Tools
+        html: tool-jsonrpc.html
+        methods_js: js/apitool-methods-jsonrpc.js
+        rest_host: http://localhost/casinocoind
+        doc_page: reference-casinocoind.html
+        sidebar: custom
+        targets:
+            - local
+            - casinocoin.org
+        template: template-rest-api-tool.html
+
+    -   name: Page Manifest
+        # Used to inform the casinocoin.org code what pages it should map
+        html: devportal-manifest.php
+        template: template-manifest.php
+        targets:
+            - casinocoin.org
+
+# Link Checker Config ------------------------------------------------------- #
+
+ignore_anchors_in:
+    - data-api-v2-tool.html
+    - casinocoin-api-tool.html
+    - tool-jsonrpc.html
+
+#Sometimes, a link is not really problematic, but the link checker detects it
+# as such and the easiest solution is to ignore it.
+known_broken_links:
+    # Strangely, Python doesn't like the cert here. Firefox is OK with it.
+    - https://validators.casinocoin.org
+
+    # These PDFs download OK in a browser
+    - http://eur-lex.europa.eu/legal-content/EN/ALL/?uri=CELEX%3A32015R0847
+    - http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2006:345:0001:0009:EN:PDF
+
+# Style Checker Config ------------------------------------------------------ #
+
+word_substitutions_file: tool/word_substitutions.yaml
+phrase_substitutions_file: tool/phrase_substitutions.yaml

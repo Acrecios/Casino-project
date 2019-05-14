@@ -1,0 +1,53 @@
+{
+  "id": 1,
+  "status": "success",
+  "type": "response",
+  "result": {
+    "info": {
+      "build_version": "4.0.2-3",
+      "complete_ledgers": "1-154936,154941-346445",
+      "hostid": "KOCH",
+      "io_latency_ms": 1,
+      "last_close": {
+        "converge_time_s": 2.002,
+        "proposers": 24
+      },
+      "load_factor": 1,
+      "peers": 24,
+      "pubkey_node": "n9MB6HvvqjnxyAdMaBGKGk58qn71G4KHYL9dBX8CBxsVd2S97Hxu",
+      "server_state": "full",
+      "state_accounting": {
+        "connected": {
+          "duration_us": "158060062",
+          "transitions": 1
+        },
+        "disconnected": {
+          "duration_us": "1515930",
+          "transitions": 1
+        },
+        "full": {
+          "duration_us": "86414616106",
+          "transitions": 1
+        },
+        "syncing": {
+          "duration_us": "359456250",
+          "transitions": 1
+        },
+        "tracking": {
+          "duration_us": "36",
+          "transitions": 1
+        }
+      },
+      "uptime": 86933,
+      "validated_ledger": {
+        "age": 162,
+        "base_fee_csc": 0.001,
+        "hash": "DB8008BD083531BD47A3A56D07D2C6B92EEF9DFD9370BF2F9E27D61348BD1172",
+        "reserve_base_csc": 10,
+        "reserve_inc_csc": 1,
+        "seq": 346445
+      },
+      "validation_quorum": 20
+    }
+  }
+}
